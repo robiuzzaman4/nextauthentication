@@ -16,6 +16,7 @@ export default function LoginForm() {
         </h1>
       </span>
 
+      {/* email field */}
       <TextField.Root
         placeholder="Enter your email"
         type="email"
@@ -28,6 +29,7 @@ export default function LoginForm() {
           <EnvelopeClosedIcon height="16" width="16" />
         </TextField.Slot>
       </TextField.Root>
+      {/* password field */}
       <TextField.Root
         placeholder="Enter your password"
         type="password"
@@ -44,8 +46,9 @@ export default function LoginForm() {
         color="gray"
         size="3"
         variant="classic"
-        highContrast
         radius="large"
+        highContrast
+        className="hover:cursor-pointer"
       >
         Login
       </Button>
