@@ -61,13 +61,13 @@ export default function Hero() {
           </h4>
 
           <div className="grid gap-2">
-            <Code size="3" className="px-4 rounded-md">
+            <Code size="3" color="teal" className="px-4 rounded-md">
               role: {CREDENTIALS.role}
             </Code>
-            <Code size="3" className="px-4 rounded-md">
+            <Code size="3" color="teal" className="px-4 rounded-md">
               email: {CREDENTIALS.email}
             </Code>
-            <Code size="3" className="px-4 rounded-md">
+            <Code size="3" color="teal" className="px-4 rounded-md">
               password: {CREDENTIALS.password}
             </Code>
           </div>
