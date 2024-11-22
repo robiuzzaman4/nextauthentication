@@ -4,6 +4,7 @@ import "@radix-ui/themes/styles.css";
 import { Theme } from "@radix-ui/themes";
 import Navbar from "@/components/navbar";
 import "./globals.css";
+import { Toaster } from "sonner";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={`${fontSans.variable} antialiased font-sans`}>
         <Theme>
           <main>
+            <Toaster position="top-center"/>
             <Navbar />
             {children}
           </main>

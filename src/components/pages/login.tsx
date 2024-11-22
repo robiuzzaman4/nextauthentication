@@ -6,8 +6,9 @@ import {
   LockClosedIcon,
   StackIcon,
 } from "@radix-ui/react-icons";
-import { Button, Spinner, TextField } from "@radix-ui/themes";
+import { Button, TextField } from "@radix-ui/themes";
 import React, { FormEvent, useTransition } from "react";
+import { toast } from "sonner";
 
 export default function Login() {
   // use transition hook for get pending and set transition function
@@ -23,7 +24,7 @@ export default function Login() {
     startTransition(() => {
       login({ email, password }).then((data) => {
         if (!data?.success) {
-          alert(data?.message);
+          toast.error(data?.message);
         }
       });
     });
@@ -49,6 +50,7 @@ export default function Login() {
               variant="soft"
               radius="large"
               required
+              disabled={pending}
             >
               <TextField.Slot>
                 <EnvelopeClosedIcon height="16" width="16" />
@@ -64,6 +66,7 @@ export default function Login() {
               variant="soft"
               radius="large"
               required
+              disabled={pending}
             >
               <TextField.Slot>
                 <LockClosedIcon height="16" width="16" />
