@@ -15,7 +15,7 @@ export default {
           const { email, password } = validateSchema.data;
 
           // get user from db
-          const user = getUserByEmail(email);
+          const user = getUserByEmail(email); // [note: no need to use async-await there, because of I'm using local constant data instead of a real database]
 
           // if user not found or password not provided then return null
           if (!user || !user.password) return null;

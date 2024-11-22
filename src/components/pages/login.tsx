@@ -8,7 +8,7 @@ import {
 import { Button, TextField } from "@radix-ui/themes";
 import React, { FormEvent } from "react";
 
-export default function LoginForm() {
+export default function Login() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
