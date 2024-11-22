@@ -32,9 +32,9 @@ export default auth(async (req) => {
     return;
   }
 
-  // if the user is not logged in and route is not a public route then redirect to login page
+  // if the user is not logged in and route is not a public route then redirect to '/' page
   if (!isLoggedIn && !isPublicRoute) {
-    return Response.redirect(new URL("/login", nextUrl));
+    return Response.redirect(new URL("/", nextUrl));
   }
 
   // this return means default doing nothing
