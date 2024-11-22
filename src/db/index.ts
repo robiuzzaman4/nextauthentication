@@ -1,15 +1,4 @@
-export type Role = "user" | "admin";
-
-export type User = {
-  id: string;
-  name: string;
-  email: string;
-  role: Role;
-};
-
-export type Db = {
-  users: User[];
-};
+import { Db } from "@/types";
 
 export const db: Db = {
   users: [
