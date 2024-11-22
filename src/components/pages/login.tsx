@@ -1,16 +1,32 @@
 "use client";
 
+import { login } from "@/actions/login";
 import {
   EnvelopeClosedIcon,
   LockClosedIcon,
   StackIcon,
 } from "@radix-ui/react-icons";
-import { Button, TextField } from "@radix-ui/themes";
-import React, { FormEvent } from "react";
+import { Button, Spinner, TextField } from "@radix-ui/themes";
+import React, { FormEvent, useTransition } from "react";
 
 export default function Login() {
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  // use transition hook for get pending and set transition function
+  const [pending, startTransition] = useTransition();
+
+  // handle login form submission
+  const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    startTransition(() => {
+      login({ email, password }).then((data) => {
+        if (!data?.success) {
+          alert(data?.message);
+        }
+      });
+    });
   };
   return (
     <section className="h-screen w-full grid place-items-center px-4">
@@ -22,9 +38,10 @@ export default function Login() {
               Welcome Back!
             </h1>
           </span>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <form onSubmit={handleLogin} className="flex flex-col gap-6">
             {/* email field */}
             <TextField.Root
+              name="email"
               placeholder="Enter your email"
               type="email"
               color="gray"
@@ -39,6 +56,7 @@ export default function Login() {
             </TextField.Root>
             {/* password field */}
             <TextField.Root
+              name="password"
               placeholder="Enter your password"
               type="password"
               color="gray"
@@ -59,6 +77,9 @@ export default function Login() {
               radius="large"
               highContrast
               className="hover:cursor-pointer"
+              type="submit"
+              disabled={pending}
+              loading={pending}
             >
               Login
             </Button>
