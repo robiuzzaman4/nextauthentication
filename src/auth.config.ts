@@ -7,7 +7,7 @@ export default {
   providers: [
     Credentials({
       authorize(credentials) {
-        // validate input using zod schema
+        // validating input
         const validateSchema = LoginSchema.safeParse(credentials);
 
         if (validateSchema.success) {
