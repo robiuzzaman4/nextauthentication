@@ -26,7 +26,7 @@ import React from "react";
 // ];
 
 const CREDENTIALS = {
-  role: "'user' | 'admin' | 'client'",
+  role: "'user' | 'admin'",
   email: "'demo@${role}.com'",
   password: "'123456'",
 };
