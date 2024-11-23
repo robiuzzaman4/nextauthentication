@@ -18,7 +18,7 @@ export default function Logout() {
         variant="classic"
         radius="large"
         highContrast
-        className="hover:cursor-pointer w-full"
+        className="hover:cursor-pointer w-full text-sm"
         type="submit"
       >
         Logout

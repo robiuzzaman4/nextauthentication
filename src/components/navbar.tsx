@@ -21,7 +21,7 @@ export default async function Navbar() {
               variant="classic"
               radius="large"
               highContrast
-              className="hover:cursor-pointer"
+              className="hover:cursor-pointer text-sm"
             >
               Dashboard
             </Button>
@@ -34,7 +34,7 @@ export default async function Navbar() {
               variant="classic"
               radius="large"
               highContrast
-              className="hover:cursor-pointer"
+              className="hover:cursor-pointer text-sm"
             >
               Login
             </Button>

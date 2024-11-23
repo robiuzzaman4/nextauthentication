@@ -49,7 +49,7 @@ export default function Hero() {
           variant="classic"
           radius="large"
           highContrast
-          className="hover:cursor-pointer w-full md:w-max"
+          className="hover:cursor-pointer w-full md:w-max text-sm"
           asChild
         >
           <Link href="/login">Try Now</Link>
