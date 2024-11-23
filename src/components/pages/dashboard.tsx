@@ -1,6 +1,6 @@
 import React from "react";
 import { auth } from "@/auth";
-import { Code } from "@radix-ui/themes";
+import { Code, Quote } from "@radix-ui/themes";
 import Card from "@/components/card";
 import Logout from "@/components/logout";
 
@@ -45,6 +45,13 @@ export default async function Dashboard() {
             </Code>
           </div>
           <Logout />
+        </Card>
+        <Card>
+          <h5 className="text-sm font-semibold tracking-tighter">Anatomy:</h5>
+          <Code color="tomato" className="p-4 rounded-md">
+            This Session Accessed via Server Component with Server-Side
+            Rendering.
+          </Code>
         </Card>
       </div>
     </section>
