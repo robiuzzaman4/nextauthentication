@@ -9,6 +9,7 @@ import {
 import { Button, TextField } from "@radix-ui/themes";
 import React, { FormEvent, useTransition } from "react";
 import { toast } from "sonner";
+import Card from "../card";
 
 export default function Login() {
   // use transition hook for get pending and set transition function
@@ -31,8 +32,8 @@ export default function Login() {
   };
   return (
     <section className="h-screen w-full grid place-items-center px-4">
-      <div className="bg-gray-100 border border-gray-200 p-2 w-full max-w-sm mx-auto rounded-3xl">
-        <div className="w-full flex flex-col justify-center gap-12 bg-white p-6 shadow-md rounded-2xl border border-gray-200">
+      <div className="w-full max-w-sm mx-auto">
+        <Card className="gap-12">
           <span className="flex flex-col items-start gap-2">
             <StackIcon height="32" width="32" />
             <h1 className="text-2xl font-semibold tracking-tighter underline underline-offset-8 decoration-wavy decoration-gray-200">
@@ -88,7 +89,7 @@ export default function Login() {
               Login
             </Button>
           </form>
-        </div>
+        </Card>
       </div>
     </section>
   );

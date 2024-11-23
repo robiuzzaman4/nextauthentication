@@ -1,6 +1,7 @@
 import { Button, Code } from "@radix-ui/themes";
 import Link from "next/link";
 import React from "react";
+import Card from "./card";
 
 // const TECH_STACKS = [
 //   {
@@ -54,8 +55,8 @@ export default function Hero() {
           <Link href="/login">Try Now</Link>
         </Button>
       </div>
-      <div className="bg-gray-100 border border-gray-200 p-2 w-full max-w-sm mx-auto rounded-3xl">
-        <div className="w-full flex flex-col gap-6 bg-white p-6 shadow-md rounded-2xl border border-gray-200">
+      <div className="w-full max-w-sm mx-auto">
+        <Card>
           <h4 className="text-sm font-semibold tracking-tighter">
             Demo Credentials:
           </h4>
@@ -71,7 +72,7 @@ export default function Hero() {
               password: {CREDENTIALS.password}
             </Code>
           </div>
-        </div>
+        </Card>
       </div>
     </div>
   );
