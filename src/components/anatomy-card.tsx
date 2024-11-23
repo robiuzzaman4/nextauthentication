@@ -1,4 +1,4 @@
-import { Button, Code } from "@radix-ui/themes";
+import { Badge, Button, Code } from "@radix-ui/themes";
 import Card from "@/components/card";
 import Link from "next/link";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
@@ -10,13 +10,33 @@ type AnatomyCardProps = {
 export default function AnatomyCard({ page }: AnatomyCardProps) {
   return (
     <Card>
-      <h5 className="text-sm font-semibold tracking-tighter">Anatomy:</h5>
-      <Code color="tomato" className="p-4 rounded-md">
+      <span className="w-full flex  items-center gap-2">
+        <h5 className="text-sm font-semibold tracking-tighter">Anatomy</h5>
+        <Badge
+          color={page === "csr" ? "tomato" : "crimson"}
+          className="rounded-md"
+        >
+          {page === "csr" ? "CSR" : "SSR"}
+        </Badge>
+      </span>
+      <Code
+        size="3"
+        color={page === "csr" ? "tomato" : "crimson"}
+        className="px-4 rounded-md w-fit"
+      >
+        {page === "csr" ? "Path: '/dashboard/csr'" : "Path: '/dashboard/ssr'"}
+      </Code>
+
+      <Code
+        size="3"
+        color={page === "csr" ? "tomato" : "crimson"}
+        className="px-4 rounded-md"
+      >
         {page === "csr"
           ? "This Session Accessed via Client Component with Client-Side Rendering."
           : "This Session Accessed via Server Component with Server-Side Rendering."}
       </Code>
-      <div className="w-full grid grid-cols-2 gap-2">
+      <div className="w-full grid sm:grid-cols-2 gap-3 sm:gap-6">
         <Button
           color="gray"
           size="3"

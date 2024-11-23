@@ -23,7 +23,7 @@ export default function SessionCard({ session }: SessionCardProps) {
 
   return (
     <Card>
-      <h5 className="text-sm font-semibold tracking-tighter">Your Session:</h5>
+      <h5 className="text-sm font-semibold tracking-tighter">Your Session</h5>
       <div className="grid gap-2">
         <Code size="3" color="teal" className="px-4 rounded-md">
           Id: {session?.user?.id}
