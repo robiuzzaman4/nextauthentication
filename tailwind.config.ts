@@ -11,6 +11,9 @@ export default {
       fontFamily: {
         sans: "var(--font-sans)",
       },
+      backgroundImage: {
+        pattern: "url('/pattern.svg')",
+      },
     },
   },
   plugins: [],
