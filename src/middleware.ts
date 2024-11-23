@@ -37,6 +37,12 @@ export default auth(async (req) => {
     return Response.redirect(new URL("/", nextUrl));
   }
 
+  // OPTIONAL - this logic for only ssr and csr example no need to use in yours.
+  // if route === '/dashboard' then redirect to '/dashboard/ssr' page
+  if (nextUrl.pathname === "/dashboard") {
+    return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl));
+  }
+
   // this return means default doing nothing
   return;
 });

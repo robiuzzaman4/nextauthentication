@@ -1,11 +1,13 @@
-import { auth } from "@/auth";
 import Card from "@/components/card";
 import Logout from "@/components/logout";
 import { Code } from "@radix-ui/themes";
+import { Session } from "next-auth";
 
-export default async function SessionCard() {
-  const session = await auth();
+type SessionCardProps = {
+  session: Session | null;
+};
 
+export default function SessionCard({ session }: SessionCardProps) {
   if (!session?.user) return;
 
   const expireDate = new Date(session?.expires as string);

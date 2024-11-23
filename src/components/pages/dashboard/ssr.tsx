@@ -11,7 +11,7 @@ export default async function Ssr() {
   return (
     <section className="w-full max-w-screen-lg mx-auto px-4 pt-32 pb-16">
       <div className="w-full grid md:grid-cols-2 gap-12">
-        <SessionCard />
+        <SessionCard session={session} />
         <AnatomyCard title="This Session Accessed via Server Component with Server-Side Rendering." />
       </div>
     </section>

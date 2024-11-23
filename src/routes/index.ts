@@ -4,4 +4,4 @@ export const PUBLIC_ROUTES = ["/"]; // all public routes goes here
 
 export const API_AUTH_PREFIX = "/api/auth"; // related to next-auth api routes
 
-export const DEFAULT_LOGIN_REDIRECT = "/dashboard"; // default redirect after login
+export const DEFAULT_LOGIN_REDIRECT = "/dashboard/ssr"; // default redirect after login
