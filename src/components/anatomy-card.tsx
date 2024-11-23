@@ -48,14 +48,14 @@ export default function AnatomyCard({ page }: AnatomyCardProps) {
         >
           {page === "csr" ? (
             <Link
-              href="https://github.com/robiuzzaman4/nextauthentication"
+              href="https://github.com/robiuzzaman4/nextauthentication/blob/main/src/components/pages/dashboard/csr.tsx"
               target="_blank"
             >
               <GitHubLogoIcon className="size-4" /> View on Github
             </Link>
           ) : (
             <Link
-              href="https://github.com/robiuzzaman4/nextauthentication"
+              href="https://github.com/robiuzzaman4/nextauthentication/blob/main/src/components/pages/dashboard/ssr.tsx"
               target="_blank"
             >
               <GitHubLogoIcon className="size-4" /> View on Github
