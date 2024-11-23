@@ -4,15 +4,17 @@ import Link from "next/link";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 type AnatomyCardProps = {
-  title: string;
+  page: "csr" | "ssr";
 };
 
-export default function AnatomyCard({ title }: AnatomyCardProps) {
+export default function AnatomyCard({ page }: AnatomyCardProps) {
   return (
     <Card>
       <h5 className="text-sm font-semibold tracking-tighter">Anatomy:</h5>
       <Code color="tomato" className="p-4 rounded-md">
-        {title}
+        {page === "csr"
+          ? "This Session Accessed via Client Component with Client-Side Rendering."
+          : "This Session Accessed via Server Component with Server-Side Rendering."}
       </Code>
       <Button
         color="gray"
