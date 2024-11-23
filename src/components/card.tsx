@@ -1,13 +1,20 @@
+import { cn } from "@/utils";
 import React, { ReactNode } from "react";
 
 type CardProps = {
   children: ReactNode;
+  className?: string;
 };
 
-export default function Card({ children }: CardProps) {
+export default function Card({ children, className }: CardProps) {
   return (
     <div className="bg-gray-100 border border-gray-200 p-2 w-full rounded-3xl">
-      <div className="w-full flex flex-col gap-6 bg-white p-6 shadow-md rounded-2xl border border-gray-200">
+      <div
+        className={cn(
+          "w-full flex flex-col gap-6 bg-white p-6 shadow-md rounded-2xl border border-gray-200",
+          className
+        )}
+      >
         {children}
       </div>
     </div>
