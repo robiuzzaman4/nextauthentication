@@ -4,9 +4,17 @@ import React from "react";
 import { useSession } from "next-auth/react";
 import SessionCard from "@/components/session-card";
 import AnatomyCard from "@/components/anatomy-card";
+import { Spinner } from "@radix-ui/themes";
 
 export default function Csr() {
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
+
+  if (status === "loading")
+    return (
+      <section className="w-fit mx-auto px-4 pt-32 pb-16">
+        <Spinner />
+      </section>
+    );
 
   if (!session?.user) return;
 

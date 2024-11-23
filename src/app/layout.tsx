@@ -5,7 +5,6 @@ import { Theme } from "@radix-ui/themes";
 import Navbar from "@/components/navbar";
 import "./globals.css";
 import { Toaster } from "sonner";
-import { SessionProvider } from "next-auth/react";
 
 const fontSans = Inter({
   subsets: ["latin"],
@@ -27,13 +26,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${fontSans.variable} antialiased font-sans`}>
         <Theme>
-          <SessionProvider>
-            <main>
-              <Toaster position="top-center" />
-              <Navbar />
-              {children}
-            </main>
-          </SessionProvider>
+          <main>
+            <Toaster position="top-center" />
+            <Navbar />
+            {children}
+          </main>
         </Theme>
       </body>
     </html>

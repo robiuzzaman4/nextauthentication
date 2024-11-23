@@ -7,8 +7,6 @@ type SessionCardProps = {
 };
 
 export default function SessionCard({ session }: SessionCardProps) {
-  if (!session?.user) return;
-
   const expireDate = new Date(session?.expires as string);
   const formatter = new Intl.DateTimeFormat("en-US", {
     year: "numeric",
