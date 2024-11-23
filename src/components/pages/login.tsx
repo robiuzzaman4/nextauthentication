@@ -67,6 +67,7 @@ export default function Login() {
               radius="large"
               required
               disabled={pending}
+              defaultValue={"123456"}
             >
               <TextField.Slot>
                 <LockClosedIcon height="16" width="16" />
