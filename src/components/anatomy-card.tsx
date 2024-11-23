@@ -16,7 +16,7 @@ export default function AnatomyCard({ page }: AnatomyCardProps) {
           color={page === "csr" ? "tomato" : "crimson"}
           className="rounded-md"
         >
-          {page === "csr" ? "CSR" : "SSR"}
+          {page === "csr" ? "CSR - Client-Side Rendering" : "SSR - Server-Side Rendering"}
         </Badge>
       </span>
       <Code
