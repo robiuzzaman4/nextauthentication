@@ -9,7 +9,7 @@ import {
 import { Button, TextField } from "@radix-ui/themes";
 import React, { FormEvent, useTransition } from "react";
 import { toast } from "sonner";
-import Card from "../card";
+import Card from "@/components/card";
 
 export default function Login() {
   // use transition hook for get pending and set transition function

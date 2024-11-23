@@ -1,7 +1,8 @@
 import React from "react";
-import { auth, signOut } from "@/auth";
-import { Button, Code } from "@radix-ui/themes";
-import Card from "../card";
+import { auth } from "@/auth";
+import { Code } from "@radix-ui/themes";
+import Card from "@/components/card";
+import Logout from "@/components/logout";
 
 export default async function Dashboard() {
   const session = await auth();
@@ -23,9 +24,9 @@ export default async function Dashboard() {
     <section className="w-full max-w-screen-lg mx-auto px-4 pt-32 pb-16">
       <div className="w-full grid md:grid-cols-2 gap-12">
         <Card>
-          <h4 className="text-sm font-semibold tracking-tighter">
+          <h5 className="text-sm font-semibold tracking-tighter">
             Your Session:
-          </h4>
+          </h5>
           <div className="grid gap-2">
             <Code size="3" color="teal" className="px-4 rounded-md">
               Id: {session?.user?.id}
@@ -43,28 +44,9 @@ export default async function Dashboard() {
               Expired At: {formattedExpireDate}
             </Code>
           </div>
+          <Logout />
         </Card>
       </div>
-      <form
-        action={async () => {
-          "use server";
-          await signOut({
-            redirectTo: "/",
-          });
-        }}
-      >
-        <Button
-          color="red"
-          size="3"
-          variant="classic"
-          radius="large"
-          highContrast
-          className="hover:cursor-pointer"
-          type="submit"
-        >
-          Logout
-        </Button>
-      </form>
     </section>
   );
 }

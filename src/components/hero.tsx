@@ -1,7 +1,7 @@
 import { Button, Code } from "@radix-ui/themes";
 import Link from "next/link";
 import React from "react";
-import Card from "./card";
+import Card from "@/components/card";
 
 // const TECH_STACKS = [
 //   {
@@ -57,9 +57,9 @@ export default function Hero() {
       </div>
       <div className="w-full max-w-sm mx-auto">
         <Card>
-          <h4 className="text-sm font-semibold tracking-tighter">
+          <h5 className="text-sm font-semibold tracking-tighter">
             Demo Credentials:
-          </h4>
+          </h5>
 
           <div className="grid gap-2">
             <Code size="3" color="teal" className="px-4 rounded-md">
