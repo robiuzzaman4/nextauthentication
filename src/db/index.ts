@@ -4,14 +4,14 @@ export const db: Db = {
   users: [
     {
       id: "1",
-      name: "Olivia Ethan",
+      name: "Demo User",
       email: "demo@user.com",
       password: "123456",
       role: "user",
     },
     {
       id: "2",
-      name: "Mason Liam",
+      name: "Demo Admin",
       email: "demo@admin.com",
       password: "123456",
       role: "admin",
