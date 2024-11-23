@@ -1,5 +1,4 @@
 import Card from "@/components/card";
-// import Logout from "@/components/logout";
 import { Code } from "@radix-ui/themes";
 import { Session } from "next-auth";
 
@@ -41,7 +40,6 @@ export default function SessionCard({ session }: SessionCardProps) {
           Expired At: {formattedExpireDate}
         </Code>
       </div>
-      {/* <Logout /> */}
     </Card>
   );
 }

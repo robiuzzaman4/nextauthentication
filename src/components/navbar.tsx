@@ -2,6 +2,7 @@ import { auth } from "@/auth";
 import { StackIcon } from "@radix-ui/react-icons";
 import { Button } from "@radix-ui/themes";
 import Link from "next/link";
+import Logout from "@/components/logout";
 
 export default async function Navbar() {
   // read session in server component
@@ -14,18 +15,7 @@ export default async function Navbar() {
           <StackIcon height="32" width="32" />
         </Link>
         {session?.user ? (
-          <Link href="/dashboard">
-            <Button
-              color="gray"
-              size="3"
-              variant="classic"
-              radius="large"
-              highContrast
-              className="hover:cursor-pointer text-sm"
-            >
-              Dashboard
-            </Button>
-          </Link>
+          <Logout />
         ) : (
           <Link href="/login">
             <Button
