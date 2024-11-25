@@ -35,7 +35,7 @@ const CREDENTIALS = {
 export default function Hero() {
   return (
     <div className="min-h-[calc(100vh-64px)] w-full flex items-center justify-center pt-32 pb-16 bg-pattern">
-      <div className="w-full h-full max-w-screen-lg mx-auto px-4 grid md:grid-cols-2 gap-12">
+      <div className="w-full h-full max-w-screen-lg mx-auto px-4 grid lg:grid-cols-2 gap-12">
         <div className="flex flex-col gap-6">
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tighter">
             RBAC authentication system in Next.js application.

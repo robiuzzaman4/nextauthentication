@@ -40,7 +40,7 @@ export default function AnatomyCard({ page }: AnatomyCardProps) {
         <Button
           color="gray"
           size="3"
-          variant="classic"
+          variant="soft"
           radius="large"
           highContrast
           className="hover:cursor-pointer w-full text-sm"
