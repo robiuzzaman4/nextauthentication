@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Card from "@/components/card";
 import Image from "next/image";
+import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 const TECH_STACKS = [
   {
@@ -35,7 +36,7 @@ const CREDENTIALS = {
 
 export default function Hero() {
   return (
-    <div className="min-h-[calc(100vh-64px)] w-full flex items-center justify-center pt-32 pb-16 bg-pattern relative">
+    <div className="min-h-[calc(100vh-64px)] w-full flex items-center justify-center pt-32 pb-16 bg-pattern relative bg-gray-50">
       <div className="w-full h-full max-w-screen-lg mx-auto px-4 grid lg:grid-cols-2 gap-12">
         <div className="flex flex-col gap-6">
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tighter">
@@ -45,17 +46,35 @@ export default function Hero() {
             An example of Role-based access control authentication system in
             Next.js application with NextAuth (credential based) and TypeScript.
           </p>
-          <Button
-            color="gray"
-            size="3"
-            variant="classic"
-            radius="large"
-            highContrast
-            className="hover:cursor-pointer w-full md:w-max text-sm"
-            asChild
-          >
-            <Link href="/login">Try Now</Link>
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button
+              color="gray"
+              size="3"
+              variant="classic"
+              radius="large"
+              highContrast
+              className="hover:cursor-pointer w-full md:w-max text-sm"
+              asChild
+            >
+              <Link href="/login">Try Now</Link>
+            </Button>
+            <Button
+              color="gray"
+              size="3"
+              variant="soft"
+              radius="large"
+              highContrast
+              className="hover:cursor-pointer w-fit text-sm"
+              asChild
+            >
+              <Link
+                href="https://github.com/robiuzzaman4/nextauthentication"
+                target="_blank"
+              >
+                <GitHubLogoIcon className="size-4" /> View on Github
+              </Link>
+            </Button>
+          </div>
         </div>
         <div className="w-full max-w-sm mx-auto">
           <Card>
