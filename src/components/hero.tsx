@@ -1,30 +1,31 @@
-import { Button, Code } from "@radix-ui/themes";
+import { Button, Code, Tooltip } from "@radix-ui/themes";
 import Link from "next/link";
 import React from "react";
 import Card from "@/components/card";
+import Image from "next/image";
 
-// const TECH_STACKS = [
-//   {
-//     label: "Next.js",
-//     imgSrc: "/icons/next.svg",
-//   },
-//   {
-//     label: "TypeScript",
-//     imgSrc: "/icons/ts.svg",
-//   },
-//   {
-//     label: "Next Auth",
-//     imgSrc: "/icons/nextauth.png",
-//   },
-//   {
-//     label: "Radix UI",
-//     imgSrc: "/icons/radix.png",
-//   },
-//   {
-//     label: "Tailwind CSS",
-//     imgSrc: "/icons/tailwindcss.svg",
-//   },
-// ];
+const TECH_STACKS = [
+  {
+    label: "Next.js",
+    imgSrc: "/icons/next.svg",
+  },
+  {
+    label: "TypeScript",
+    imgSrc: "/icons/ts.svg",
+  },
+  {
+    label: "Next Auth",
+    imgSrc: "/icons/nextauth.png",
+  },
+  {
+    label: "Radix UI",
+    imgSrc: "/icons/radix.png",
+  },
+  {
+    label: "Tailwind CSS",
+    imgSrc: "/icons/tailwindcss.svg",
+  },
+];
 
 const CREDENTIALS = {
   role: "'user' | 'admin'",
@@ -34,7 +35,7 @@ const CREDENTIALS = {
 
 export default function Hero() {
   return (
-    <div className="min-h-[calc(100vh-64px)] w-full flex items-center justify-center pt-32 pb-16 bg-pattern">
+    <div className="min-h-[calc(100vh-64px)] w-full flex items-center justify-center pt-32 pb-16 bg-pattern relative">
       <div className="w-full h-full max-w-screen-lg mx-auto px-4 grid lg:grid-cols-2 gap-12">
         <div className="flex flex-col gap-6">
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tighter">
@@ -74,6 +75,19 @@ export default function Hero() {
               </Code>
             </div>
           </Card>
+        </div>
+        <div className="flex items-center justify-center lg:justify-start gap-3 flex-wrap">
+          {TECH_STACKS.map(({ label, imgSrc }) => (
+            <Tooltip content={label} key={label}>
+              <Image
+                src={imgSrc}
+                alt={label}
+                width={720}
+                height={720}
+                className="size-8 rounded"
+              />
+            </Tooltip>
+          ))}
         </div>
       </div>
     </div>
