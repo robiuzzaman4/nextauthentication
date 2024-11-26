@@ -33,7 +33,7 @@ const RESOURCES = [
 export default function FeaturesAndResources() {
   return (
     <section className="w-full border-t border-gray-200">
-      <div className="w-full max-w-screen-lg mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12">
+      <div className="w-full max-w-2xl lg:max-w-screen-lg mx-auto px-4 py-16 grid lg:grid-cols-2 gap-12">
         <div className="flex flex-col gap-6">
           <h1 className="text-2xl font-semibold tracking-tighter">Features:</h1>
           <ul className="flex flex-col gap-3">
