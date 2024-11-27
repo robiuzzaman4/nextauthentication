@@ -12,8 +12,6 @@ export function getUserById(id: string) {
   return user;
 }
 
-
-
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
