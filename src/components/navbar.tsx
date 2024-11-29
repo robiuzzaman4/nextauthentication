@@ -5,7 +5,7 @@ import Link from "next/link";
 import Logout from "@/components/logout";
 
 export default async function Navbar() {
-  // read session in server component
+  // get session form auth
   const session = await auth();
 
   return (
